@@ -1,7 +1,8 @@
 """Weekly dengue forecasting pipeline (synthetic data), corrected version.
 
-Same data and models as leaky_pipeline.py, with every planted failure fixed.
-EpiLeakCheck should report nothing here at medium confidence or above.
+Same data and models as leaky_pipeline.py, with the six planted failures fixed.
+EpiLeakCheck should report nothing here. Remaining caveats (see ANSWER_KEY.md): a single
+test window from one origin, and no reporting-delay handling for real surveillance data.
 """
 import numpy as np
 import pandas as pd

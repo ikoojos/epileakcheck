@@ -1,7 +1,11 @@
 # Answer key for the EpiLeakCheck samples
 
 `leaky_pipeline.py` has six planted failures. `clean_pipeline.py` uses the same data and
-models with every failure fixed, so it should give no findings. Both scripts run end to end
+models with those six fixed, so it should give no findings. It is clean with respect to the
+planted failures and the tool's rules, not in every sense: it still evaluates one test window
+from a single origin (candidate CL-02, not implemented in the tool), and on real surveillance
+data `cases_lag1` would assume last week's count is complete (FM2). A stricter version would
+use rolling-origin evaluation and a reporting-delay buffer or data vintages. Both scripts run end to end
 (numpy, pandas, scikit-learn) and print their test MAE and outbreak F1.
 
 ## Planted failures in leaky_pipeline.py
