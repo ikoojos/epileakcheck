@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "epileakcheck"
+version = "0.3.2"
+description = "Static checker for validation-scheme failures (FM1-FM4 and derived candidates) in epidemic-forecasting ML pipelines"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.scripts]
+epileakcheck = "epileakcheck.cli:main"
+
+[tool.setuptools]
+packages = ["epileakcheck"]
